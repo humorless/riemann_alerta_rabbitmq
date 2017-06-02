@@ -2,7 +2,7 @@
 
 1. invoke riemann docker
     ```
-    docker-compose -f riemann.yml up -d riemann
+    docker-compose up -d riemann
     ```
 
 2. build go client and test
