@@ -1,0 +1,7 @@
+riemann:
+  container_name: riemann
+  environment: []
+  image: mnuessler/riemann
+  volumes:
+    - "./conf.d:/etc/riemann/conf.d"
+  ports: ['5555:5555','5556:5556']
