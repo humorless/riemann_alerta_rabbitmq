@@ -26,7 +26,9 @@
 
 
 ## Invoke Alerta
+   In testing environment, we assume the host machine that running docker is using IP `10.20.30.40`.
+
    ```
    docker-compose up -d alerta-web
    ```
-   Use web browser to see http://localhost:8081
+   Use web browser to see http://10.20.30.40:8081

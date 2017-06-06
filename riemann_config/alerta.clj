@@ -4,8 +4,8 @@
 (def version "3.1.0")
 
 (def alerta-endpoints
-    {:alert "http://localhost:8080/alert"
-    :heartbeat "http://localhost:8080/heartbeat"})
+    {:alert "http://10.20.30.40:8081/api/alert"
+    :heartbeat "http://10.20.30.40:8081/heartbeat"})
 
 (defn post-to-alerta
   "POST to the Alerta REST API."
