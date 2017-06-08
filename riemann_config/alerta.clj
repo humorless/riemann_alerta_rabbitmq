@@ -5,7 +5,7 @@
 
 (def alerta-endpoints
     {:alert "http://10.20.30.40:8081/api/alert"
-    :heartbeat "http://10.20.30.40:8081/heartbeat"})
+    :heartbeat "http://10.20.30.40:8081/api/heartbeat"})
 
 (defn post-to-alerta
   "POST to the Alerta REST API."
