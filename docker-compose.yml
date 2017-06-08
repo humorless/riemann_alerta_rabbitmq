@@ -20,9 +20,22 @@ services:
       - /data/mongo:/data/db
     restart: always
   riemann:
+    image: mnuessler/riemann
     container_name: riemann
     environment: []
-    image: mnuessler/riemann
     volumes:
       - "$PWD/riemann_config:/etc/riemann/"
+      - "$PWD/riemann_rabbitmq_plugin/etc_default_riemann:/etc/default/riemann"
+      - "$PWD/riemann_rabbitmq_plugin/riemann-rabbitmq-input.jar:/usr/lib/riemann/riemann-rabbitmq-input.jar"
     ports: ['5555:5555','5556:5556']
+  mq:
+    image: rabbitmq:alpine
+    container_name: mq
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+      - RABBITMQ_ERLANG_COOKIE='cookie'
+      - RABBITMQ_ENABLE_MANAGEMENT_PLUGIN=true
+    hostname: mq
+    ports:
+      - 5672:5672
