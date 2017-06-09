@@ -13,13 +13,11 @@
                    (String. payload "UTF-8") delivery-tag content-type type)))
 
 (def message
-  {:endpoint "test-endpoint"
-   :metric "test-metric"
-   :timestamp 1488884708
-   :step 60
-   :value 10
-   :counterType "GAUGE"
-   :tags "idc=lg"})
+  {:host   "127.0.0.3"
+   :service "cpu"
+   :metric 0.9
+   :group "OS"
+   :event "CpuUtil"})
 
 (def payload
   (json/write-str message))
