@@ -25,8 +25,8 @@ services:
     environment: []
     volumes:
       - "$PWD/riemann_config:/etc/riemann/"
-      - "$PWD/riemann_rabbitmq_plugin/etc_default_riemann:/etc/default/riemann"
-      - "$PWD/riemann_rabbitmq_plugin/riemann-rabbitmq-input.jar:/usr/lib/riemann/riemann-rabbitmq-input.jar"
+      - "$PWD/plugin_riemann_rabbitmq/etc_default_riemann:/etc/default/riemann"
+      - "$PWD/plugin_riemann_rabbitmq/riemann-rabbitmq-input.jar:/usr/lib/riemann/riemann-rabbitmq-input.jar"
     ports: ['5555:5555','5556:5556']
   mq:
     image: rabbitmq:alpine

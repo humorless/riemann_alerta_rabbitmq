@@ -12,12 +12,19 @@
   (println (format "[consumer] Received a message: %s, delivery tag: %d, content type: %s, type: %s"
                    (String. payload "UTF-8") delivery-tag content-type type)))
 
-(def message
+(def c_message
   {:host   "127.0.0.3"
    :service "cpu"
    :metric 0.9
    :group "OS"
    :event "CpuUtil"})
+
+(def message
+  {:host   "127.0.0.3"
+   :service "disk"
+   :metric 0.9
+   :group "OS"
+   :event "FsUtil"})
 
 (def payload
   (json/write-str message))
