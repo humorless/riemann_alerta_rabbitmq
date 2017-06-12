@@ -36,7 +36,7 @@
                         75 (warning "Memory utilisation >75%" dedup-alert)
                         (normal "Memory utilisation is OK" dedup-alert))))
 
-            (match :service #"disk"
+            (match :service #"inode"
                 (with {:event "FsUtil" :group "OS"}
                     (splitp < (* metric 100)
                         95 (critical "Filesystem utilisation >95% " dedup-alert)

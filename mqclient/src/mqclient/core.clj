@@ -15,16 +15,12 @@
 (def c_message
   {:host   "127.0.0.3"
    :service "cpu"
-   :metric 0.9
-   :group "OS"
-   :event "CpuUtil"})
+   :metric 0.9 })
 
 (def message
-  {:host   "127.0.0.3"
+  {:host   "127.0.0.5"
    :service "disk"
-   :metric 0.9
-   :group "OS"
-   :event "FsUtil"})
+   :metric 0.9 })
 
 (def payload
   (json/write-str message))
